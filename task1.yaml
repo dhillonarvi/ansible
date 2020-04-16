@@ -1,0 +1,25 @@
+---
+- name: install mysqlc copu jmx
+  hosts: wdc-tst-limitingcassandra
+  remote_user: singharv
+  #to promote the user to root
+  become: yes
+  tasks:
+    - name: create cassmon directory
+      file: 
+        path: /opt/cassmon
+        state: directory
+    - name: Install mariadb client
+      yum:
+        name: MariaDB-client
+        state: absent
+    - name: To see if selenux is enabled
+      command: getenforce
+      register: sestatusvariable
+      changed_when: false #because it will always retun changed.
+
+    - name: copy cassandra-monotor to cassmon
+      copy:
+        src: /opt/cassandra-monitor/jmx_exporter/config.yaml
+        dest: /opt/cassmon
+        remote_src: yes
