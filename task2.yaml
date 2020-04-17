@@ -1,0 +1,17 @@
+- name: install mysql 
+  hosts: pdc-tst-limitingcassandra
+  remote_user: singharv
+  #to promote the user to root
+  become: yes
+
+  roles:
+    - mysql
+
+- name: copy cassandra monitor files
+  hosts: pdc-tst-limitingcassandra
+  remote_user: singharv
+  #to promote the user to root
+  become: yes
+
+  roles:
+    - cassandra

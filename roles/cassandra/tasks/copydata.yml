@@ -1,0 +1,5 @@
+- name: copy cassandra-monotor to cassmon
+  copy:
+    src: "{{source_dir}}"
+    dest: /opt/cassmon/
+    remote_src: yes

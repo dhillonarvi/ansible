@@ -1,0 +1,4 @@
+---
+# tasks file for cassandra
+
+- include: install_mysql_client.yaml

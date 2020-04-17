@@ -1,0 +1,5 @@
+---
+# tasks file for cassandra
+- include: createdir.yml
+- include: copydata.yml
+- include: selinux.yaml

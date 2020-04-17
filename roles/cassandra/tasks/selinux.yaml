@@ -1,0 +1,4 @@
+- name: To see if selenux is enabled
+  command: getenforce
+  register: sestatusvariable
+  changed_when: false #because it will always retun changed.

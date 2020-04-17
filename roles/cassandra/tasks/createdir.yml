@@ -1,0 +1,4 @@
+- name: create cassmon directory
+  file: 
+    path: /opt/cassmon
+    state: directory

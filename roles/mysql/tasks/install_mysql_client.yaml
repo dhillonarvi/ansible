@@ -1,0 +1,4 @@
+- name: Install mariadb client
+  yum:
+    name: MariaDB-client
+    state: absent
